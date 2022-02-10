@@ -32,8 +32,7 @@ SortingArrayApp::SortingArrayApp(const size_t& size, const double& d, std::funct
 
     ctx.update = [this] () {
         ctx.background({1.0f, 1.0f, 1.0f, 1.0f});
-        ctx.stroke = {0.f, 0.f, 0.f, 0.f};
-        ctx.stroke_weight = 0.f;
+        ctx.use_stroke = false;
 
         const float rectWidth = ctx.aspect_ratio() / array.size();
 
