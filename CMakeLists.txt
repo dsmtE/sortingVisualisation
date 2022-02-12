@@ -18,24 +18,23 @@ message(STATUS "")
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
 # Enable good warnings
-if (MSVC)
-    target_compile_options(${PROJECT_NAME} PRIVATE /WX /W3)
-else()
-    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -pedantic-errors)
-endif()
+# if (MSVC)
+#     target_compile_options(${PROJECT_NAME} PRIVATE /WX /W3)
+# else()
+#     target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -pedantic-errors)
+# endif()
 
 # Set the folder where the executable is created
 set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE})
 
-# piksel
-add_subdirectory(lib/piksel)
-target_link_libraries(${PROJECT_NAME} piksel)
-target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE lib/piksel/src)
+# p6
+add_subdirectory(lib/p6)
+target_link_libraries(${PROJECT_NAME} p6::p6)
 
 # other lib
 target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE "lib")
 
-# Get sources files
+# Get source files
 file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS "src/*")
 target_sources(${PROJECT_NAME} PRIVATE ${SRC_FILES})
 target_include_directories(${PROJECT_NAME} PRIVATE src)

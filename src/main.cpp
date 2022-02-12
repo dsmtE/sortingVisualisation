@@ -19,5 +19,4 @@ void BubbleSort(std::vector<T>& array) {
 
 int main() {
     SortingArrayApp app(1000, 0.00001, BubbleSort<PrimitiveWrapper<float>>);
-    app.start();
 }
