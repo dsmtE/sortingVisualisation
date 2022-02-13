@@ -1,9 +1,12 @@
 # sortingVisualisation
 
-Small test for the visualization of sorting algorithm without syntax overload ( using template Wrapper and observable).
+Small app for the visualization of sorting algorithm without too much syntax overload (using template Wrapper and observable).
 
+Special thanks to **JulesFouchy** and his library [p6](https://github.com/JulesFouchy/p6) for the drawing api.
+### Compiling
 
-Use [piksel](https://bernhardfritz.github.io/piksel/#/) for visualisation
-> **Note: a small [hack](https://bernhardfritz.github.io/piksel/#:~:text=Copied-,Windows,-users%20need%20to) with piksel must be done for build natively on windows :**
-> 
-> Windows users need to patch one of piksel's depencencies for native builds to work correctly. This can be done by entering cd piksel followed by git apply windows.patch.
+You need to install [CMake](https://cmake.org/download/).
+
+To use CMake I recommend this VS Code extension : [ms-vscode.cmake-tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools). You will need to setup the extension with a compiler. Here is [the tutorial](https://code.visualstudio.com/docs/cpp/cmake-linux). It is based on Linux but at the bottom of the page you will find the explanations to adapt it for [Windows](https://code.visualstudio.com/docs/cpp/config-msvc) and [Mac](https://code.visualstudio.com/docs/cpp/config-clang-mac).
+
+Alternatively you can just create a *build* folder at the root of this project, open a terminal and run `cmake ..`; chances are it will detect what compiler you have installed and generate the appropriate Makefile / Visual Studio solution / Xcode project.
