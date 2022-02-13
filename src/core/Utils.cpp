@@ -22,7 +22,7 @@ std::string CamelCaseConvert(const std::string_view& camelCase) {
     return str;
 }
 
-//  not optimized(CPU ) but simple and relatively accurate sleep
+//  not optimized(CPU) but simple and relatively accurate sleep
 void SleepFor(double dt) {
     static constexpr std::chrono::duration<double> MinSleepDuration(0);
     std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();

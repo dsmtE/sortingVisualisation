@@ -8,14 +8,12 @@
 #include "magic_enum.hpp"
 
 #include <thread>
-#include <mutex>
 #include <vector>
 #include <chrono>
 #include <utility>
 #include <functional>
 
 class SortingArrayApp : public IObserver<PrimitiveWrapperOperatorType> {
-
 private:
 
     p6::Context ctx;
@@ -29,16 +27,16 @@ private:
 
     std::function<void(std::vector<PrimitiveWrapper<float>>&)> sortFunction;
 
-    std::pair<float, float> lastSwaped;
-
     std::thread computeThread;
-    std::mutex lock;
+    bool isSorting;
 
     double delay;
-public:
-    SortingArrayApp(const size_t& size, const double& d, std::function<void(std::vector<PrimitiveWrapper<float>>& )> sortFunction);
 
-    void setup();
+    void ShuffleArray();
+
+public:
+    SortingArrayApp(const size_t& arraySize, const double& delay, std::function<void(std::vector<PrimitiveWrapper<float>>& )> sortFunction);
 
     void Update(const PrimitiveWrapperOperatorType& value) override;
+
 };

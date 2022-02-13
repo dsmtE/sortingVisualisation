@@ -8,7 +8,7 @@ if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     set (CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/dist" CACHE PATH "Install path prefix, prepended onto install directories." FORCE )
 endif()
 
-project(SortingVisualisation VERSION 0.1.0)
+project(SortingVisualisation VERSION 0.2.0)
 add_executable(${PROJECT_NAME})
 
 message(STATUS "")
