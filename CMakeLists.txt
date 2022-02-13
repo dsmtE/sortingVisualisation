@@ -18,11 +18,11 @@ message(STATUS "")
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
 # Enable good warnings
-# if (MSVC)
-#     target_compile_options(${PROJECT_NAME} PRIVATE /WX /W3)
-# else()
-#     target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -pedantic-errors)
-# endif()
+if (MSVC)
+    target_compile_options(${PROJECT_NAME} PRIVATE /W3)
+else()
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -pedantic-errors)
+endif()
 
 # Set the folder where the executable is created
 set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE})
