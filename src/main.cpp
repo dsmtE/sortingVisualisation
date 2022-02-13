@@ -44,7 +44,7 @@ void BubbleSort(std::vector<PrimitiveWrapper<float>>& array) {
 
 int main() {
 
-    const int arraySize = 500;
-    const double nsDelay = 0.00005;
+    const int arraySize = 50;
+    const double nsDelay = 0.01;
     SortingArrayApp app(arraySize, nsDelay, BubbleSort);
 }
